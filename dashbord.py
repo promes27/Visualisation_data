@@ -59,7 +59,7 @@ if fl and df.shape[0] > 0:
         #image 
         # fig = px.bar(category_df, y="CompteID", x="TypeTransaction", template = "seaborn")
         # st.plotly_chart(fig,use_container_width=True , height=200)
-        st.bar_chart(category_df)
+        st.line_chart(category_df)
         
     with col1:
         st.subheader("Type Transaction par compte")
