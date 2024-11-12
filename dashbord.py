@@ -76,7 +76,7 @@ if fl and df.shape[0] > 0:
         ###############image#######
         # fig = px.pie(category_df, values="CompteID", names="StatutCompte" , hole =0.5)
         # st.plotly_chart(fig,use_container_width=True)
-        st.bar_chart(category_df)
+        st.bar_chart(category_df, x="CompteID", y="StatutCompte")
 
     with col2:
         st.subheader("Statut par compte")
