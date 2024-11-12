@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
+# import plotly.express as px
 import datetime
 import os
 import warnings
@@ -57,8 +57,9 @@ if fl and df.shape[0] > 0:
         category_df = data_frame.groupby('TypeTransaction', as_index=False)['CompteID'].count()
         category_df = pd.DataFrame(category_df)
         #image 
-        fig = px.bar(category_df, y="CompteID", x="TypeTransaction", template = "seaborn")
-        st.plotly_chart(fig,use_container_width=True , height=200)
+        # fig = px.bar(category_df, y="CompteID", x="TypeTransaction", template = "seaborn")
+        # st.plotly_chart(fig,use_container_width=True , height=200)
+        st.bar_chart(category_df)
         
     with col1:
         st.subheader("Type Transaction par compte")
@@ -73,8 +74,9 @@ if fl and df.shape[0] > 0:
         category_df = pd.DataFrame(category_df)
         # print(category_df)
         ###############image#######
-        fig = px.pie(category_df, values="CompteID", names="StatutCompte" , hole =0.5)
-        st.plotly_chart(fig,use_container_width=True)
+        # fig = px.pie(category_df, values="CompteID", names="StatutCompte" , hole =0.5)
+        # st.plotly_chart(fig,use_container_width=True)
+        st.bar_chart(category_df)
 
     with col2:
         st.subheader("Statut par compte")
