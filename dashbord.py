@@ -55,11 +55,11 @@ if fl and df.shape[0] > 0:
     col1, col2 = st.columns((2))
     def type_transaction_compte(data_frame):
         category_df = data_frame.groupby('TypeTransaction', as_index=False)['CompteID'].count()
-        # category_df = pd.DataFrame(category_df)
+        category_df = pd.DataFrame(category_df)
         #image 
         # fig = px.bar(category_df, y="CompteID", x="TypeTransaction", template = "seaborn")
         # st.plotly_chart(fig,use_container_width=True , height=200)
-        st.line_chart(category_df)
+        st.bar_chart(category_df,y="CompteID", x="TypeTransaction")
         
     with col1:
         st.subheader("Type Transaction par compte")
